@@ -1,0 +1,36 @@
+#:kivy 2.0.0
+
+<Frontend>:
+    orientation: "vertical"
+
+    MDBottomNavigation:
+        id: panel
+
+        MDBottomNavigationItem:
+            name: "tab1"
+            text: "Author"
+            icon: "account-badge-outline"
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: dp(10)
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+                MDLabel:
+                    font_style: "H3"
+                    theme_text_color: "Primary"
+                    text: "Дрозд Світлана\nГрупа ІВ-81\nЗК ІВ-8111"
+                    halign: "center"
+
+        MDBottomNavigationItem:
+            name: "tab2"
+            text: "One more"
+            icon: "plus"
+
+            MDLabel:
+                font_style: "H3"
+                theme_text_color: "Primary"
+                text: "Just one more tab. Nothing else"
+                halign: "center"
