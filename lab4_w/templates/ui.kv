@@ -1,0 +1,88 @@
+#:kivy 2.0.0
+
+#:import calculate_points src.data_provider.calculate_points
+#:import calculate_size src.data_provider.calculate_size
+#:import calculate_pos src.data_provider.calculate_pos
+
+
+<PieScreen>:
+    md_bg_color: 0.15, 0.15, 0.15, 1
+    canvas:
+        Color:
+            rgb: 68 / 255, 77 / 255, 156 / 255
+        Ellipse:
+            pos: calculate_pos(self.width, self.height)
+            size: calculate_size(self.width, self.height)
+            angle_start: root.angles[0]
+            angle_end: root.angles[1]
+        Color:
+            rgb: 156 / 255, 113 / 255, 68 / 255
+        Ellipse:
+            pos: calculate_pos(self.width, self.height)
+            size: calculate_size(self.width, self.height)
+            angle_start: root.angles[1]
+            angle_end: root.angles[2]
+        Color:
+            rgb: 84 / 255, 61 / 255, 36 / 255
+        Ellipse:
+            pos: calculate_pos(self.width, self.height)
+            size: calculate_size(self.width, self.height)
+            angle_start: root.angles[2]
+            angle_end: root.angles[3]
+        Color:
+            rgb: 68 / 255, 141 / 255, 156 / 255
+        Ellipse:
+            pos: calculate_pos(self.width, self.height)
+            size: calculate_size(self.width, self.height)
+            angle_start: root.angles[3]
+            angle_end: root.angles[4]
+        Color:
+            rgb: (0.15, 0.15, 0.15)
+        Ellipse:
+            pos: calculate_pos(self.width, self.height, 4)
+            size: calculate_size(self.width, self.height, 4)
+
+<GraphScreen>:
+    md_bg_color: 0.15, 0.15, 0.15, 1
+    canvas:
+        Color:
+            rgb: 68 / 255, 77 / 255, 156 / 255
+        Line:
+            width: 1
+            cap: 'round'
+            joint: 'round'
+            points: [(self.width / 2, 0), (self.width / 2, self.height)]
+        Color:
+            rgb: 68 / 255, 77 / 255, 156 / 255
+        Line:
+            width: 1
+            cap: 'round'
+            joint: 'round'
+            points: [(0, self.height / 2), (self.width, self.height / 2)]
+
+        Color:
+            rgb: 156 / 255, 113 / 255, 68 / 255
+        Line:
+            width: 2
+            cap: 'round'
+            joint: 'round'
+            points: calculate_points(self.width, self.height)
+
+
+<UI>:
+
+<BooksTab>:
+
+<BookListScreen>:
+
+<BooksListItem>:
+
+<BookInfoScreen>:
+
+<BookInfoContent>:
+
+<SearchField>:
+    hint_text: "    Search"
+    on_text: self.make_search()
+
+<MDScrollableLabel>:
