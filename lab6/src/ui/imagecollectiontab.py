@@ -17,9 +17,7 @@ Builder.load_file(f"{Config.TEMPLATES_DIR}/imagecollectiontab.kv")
 
 
 class ImageCell(AsyncImage):
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+    pass
 
 
 class ImageGrid(MDGridLayout):
